@@ -9,10 +9,10 @@
 
   <ion-segment  [(ngModel)]="whichsegment">
     <ion-segment-button value="send">
-      <ion-label > Incoming Deal </ion-label>
+      <ion-label > Dealer setting </ion-label>
     </ion-segment-button>
     <ion-segment-button value="deals">
-      <ion-label > Pending</ion-label>
+      <ion-label > Incoming</ion-label>
     </ion-segment-button>
     <ion-segment-button value="messages">
       <ion-label > Completed </ion-label>
@@ -26,95 +26,11 @@
   <ion-card >
       <ion-card-content >
        <ion-item>
-         <ion-label position="stacked"> Item requested </ion-label>
-         <ion-input  [(ngModel)]="toaddress" placeholder="Item id "></ion-input>
+      <ion-button fill="clear" size="small" color="primary" (click)="generatetestnet()"> Enable auto approve </ion-button>
+      <ion-button fill="clear" size="small" color="primary" (click)="generatetestnet()"> Disable auto approve </ion-button>
        </ion-item>
     </ion-card-content >
   </ion-card >
-  <ion-card >
-      <ion-card-header>
-     Contract and Pay 
-      <ion-button fill="clear" size="small" color="primary" (click)="generatetestnet()"> Prepare Contract </ion-button>
-      </ion-card-header>
-      <ion-card-content >
-
-       <ion-item>
-         <ion-label position="stacked"> Amount to pay with contract </ion-label>
-         <ion-input  [(ngModel)]="toamount" placeholder="Amount to pay "></ion-input>
-       </ion-item>
-
-      <ion-item text-wrap>
-         <ion-label position="stacked"> Created contract address </ion-label>
-         <ion-input  [(ngModel)]="issued.address" placeholder="Created contract address" ></ion-input>
-      </ion-item >
-       <ion-item>
-      <ion-button fill="clear" size="small" color="primary" (click)="sendpayment()"> Fund contract </ion-button>
-      <ion-button fill="clear" size="small" color="primary" (click)="sendpayment()"> Request deal </ion-button>
-       </ion-item>
-      </ion-card-content >
-    </ion-card >
-
-    <ion-card >
-      <ion-item >
-     Transaction id: {{txid}}
-      </ion-item >
-     <ion-item >
-      <ion-button fill="clear" size="small" color="primary" (click)="getwalletbalance()"> Wallet balance</ion-button>
-      <ion-button fill="clear" size="small" color="primary" (click)="getaddressbalance()"> Contract address balance</ion-button>
-      </ion-item >
-
-      <ion-item *ngIf="addressbalance">
-  <ion-label>
-     <h4> Address Balance: {{addressbalance.balanceSat}} </h4>
-<p> Unconfirmed : {{addressbalance.unconfirmedBalance }} </p>
-  </ion-label>
-      </ion-item >
-      <ion-item *ngIf="walletbalance" >
-  <ion-label>
-     <h4> Wallet Balance: {{walletbalance.balanceSat}} </h4>
-<p> Unconfirmed : {{walletbalance.unconfirmedBalance }} </p>
-  </ion-label>
-      </ion-item >
-
-    </ion-card>
-
-
-
-    <ion-card class="datainput">
-      <ion-card-header>
-      <ion-card-title>
-     Deal contract/Requestor PIN 
-      </ion-card-title>
-      </ion-card-header>
-      <ion-card-content >
-            <ion-item>
-         <ion-label position="stacked" text-wrap> Deal Contract : {{issued.message}} </ion-label>
-            </ion-item>
-
-
-            <ion-item>
-         <ion-label position="stacked"> Requestor PIN </ion-label>
-         <ion-input  [(ngModel)]="issued.pin" placeholder="Requestor PIN "></ion-input>
-           </ion-item>
-
-
-            <ion-item>
-         <ion-label position="stacked" text-wrap> Three PINs are used in contract. Requestor-PIN, Receiver-PIN, Manager-PIN. Once all PIN validated, settlement happens after 2 hrs. If deal does not happen in 4 hrs, it gets reverted. If any errors,  payment suspended until review.
-
-         </ion-label>
-           </ion-item>
-
-
-
-      <ion-item *ngIf="issued.fullredeemurl">
-         <ion-label position="stacked"> FullRedeem sharable link </ion-label>
-         <ion-input  [(ngModel)]="issued.fullredeemurl" placeholder="Place to display contract address"></ion-input>
-      </ion-item >
-
-      </ion-card-content>
-    </ion-card>
-      <ion-item >
-      </ion-item >
 
 
 </div>

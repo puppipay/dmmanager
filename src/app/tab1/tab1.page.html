@@ -4,7 +4,7 @@
 </ion-header>
   <ion-segment  [(ngModel)]="whichsegment">
     <ion-segment-button value="receive">
-      <ion-label > Deal Receive </ion-label>
+      <ion-label > Finish </ion-label>
     </ion-segment-button>
     <ion-segment-button value="pending">
       <ion-label > Pending </ion-label>
@@ -48,7 +48,7 @@
     <ion-card class="datainput">
       <ion-card-header>
       <ion-card-title>
-     Receive payment from deal contract
+     Settle deal 
       </ion-card-title>
       </ion-card-header>
       <ion-card-content >
@@ -80,7 +80,7 @@
            </ion-item>
 
 
-      <ion-button fill="clear" size="small" color="primary" (click)="consumetestnetmessage()"> Accept payment </ion-button>
+      <ion-button fill="clear" size="small" color="primary" (click)="consumetestnetmessage()"> Settle deal </ion-button>
 
       </ion-card-content>
     </ion-card>
@@ -115,28 +115,6 @@
       </ion-card-title>
       </ion-card-header>
       <ion-card-content>
-  <ion-label>
-  <h4>
-  1)   As a service provider, you can choose percentage of user-transaction as your fees. This will be your income. This can be set upon SIGNUP.
-  </h4>
-  <ion-item-divider>
-  </ion-item-divider>
-  <h4>
-2) To signup send email to puppipay01@gmail.com
-  </h4>
-  <ion-item-divider>
-  </ion-item-divider>
-  <h4>
-3) PuppiPay is a product of Belavadi Technology Solutions. All Rights Reserved.
-  </h4>
- <ion-item-divider>
-  </ion-item-divider>
-
-  <h4>
-4) Subject to various limitations, terms and conditions. 
-  </h4>
-
-  </ion-label>
       </ion-card-content>
     </ion-card>
 
